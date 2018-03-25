@@ -53,6 +53,9 @@
                                 <rect key="frame" x="295" y="146" width="80" height="80"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="&lt;––"/>
+                                <connections>
+                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VeJ-9k-fue"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqn-Lk-LPd">
                                 <rect key="frame" x="0.0" y="234" width="80" height="80"/>
@@ -65,12 +68,17 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiC-ne-Cl3">
                                 <rect key="frame" x="200" y="234" width="80" height="80"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
-                                <state key="normal" title="X^2"/>
+                                <state key="normal" title="X³"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugm-oX-NfZ">
                                 <rect key="frame" x="97" y="234" width="80" height="80"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
-                                <state key="normal" title="X^3"/>
+                                <state key="normal" title="X²"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ach-jD-Vjv">
+                                <rect key="frame" x="295" y="234" width="80" height="80"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
+                                <state key="normal" title="÷"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jht-f0-a1w">
                                 <rect key="frame" x="0.0" y="321" width="80" height="80"/>
@@ -79,20 +87,29 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="7"/>
+                                <connections>
+                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uWR-e1-DN1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJP-nn-TNY">
                                 <rect key="frame" x="97" y="321" width="80" height="80"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="8"/>
+                                <connections>
+                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0OS-GQ-iMe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcJ-NF-Oiz">
                                 <rect key="frame" x="200" y="321" width="80" height="80"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="9"/>
+                                <connections>
+                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0dY-Lr-rcB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djg-T9-0Ep">
-                                <rect key="frame" x="295" y="321" width="80" height="80"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
+                                <rect key="frame" x="295" y="321" width="80" height="83"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
                                 <state key="normal" title="✕"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpP-Ii-dJD">
@@ -102,19 +119,28 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="4"/>
+                                <connections>
+                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iy1-5d-Dde"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RX2-L4-3c5">
                                 <rect key="frame" x="97" y="409" width="80" height="80"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="5"/>
+                                <connections>
+                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HvU-XU-ZlW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8s-36-3qI">
                                 <rect key="frame" x="200" y="409" width="80" height="80"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="6"/>
+                                <connections>
+                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xbS-vh-OwD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUx-L9-Whn">
-                                <rect key="frame" x="295" y="405" width="80" height="80"/>
+                                <rect key="frame" x="295" y="408" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="7I3-ta-Zhk"/>
                                 </constraints>
@@ -125,11 +151,17 @@
                                 <rect key="frame" x="200" y="502" width="80" height="80"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="3"/>
+                                <connections>
+                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dRy-Hz-wV1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSw-Uv-hqe">
                                 <rect key="frame" x="97" y="502" width="80" height="80"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="2"/>
+                                <connections>
+                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ox6-Q1-Ddn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQT-ho-DWX">
                                 <rect key="frame" x="0.0" y="502" width="80" height="80"/>
@@ -138,9 +170,12 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="1"/>
+                                <connections>
+                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dCX-jl-JJY"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0U-ne-lUI">
-                                <rect key="frame" x="295" y="493" width="80" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0U-ne-lUI">
+                                <rect key="frame" x="295" y="501" width="80" height="80"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="+"/>
                             </button>
@@ -151,11 +186,17 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="000"/>
+                                <connections>
+                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kqk-Kg-SdS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZc-ES-tT5">
                                 <rect key="frame" x="100" y="587" width="80" height="80"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="0"/>
+                                <connections>
+                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sKh-l4-ZKK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4G-UT-A6m">
                                 <rect key="frame" x="200" y="587" width="80" height="80"/>
@@ -167,17 +208,12 @@
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="="/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NU-pR-xzG">
-                                <rect key="frame" x="0.0" y="36" width="375" height="102"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="85"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="7NU-pR-xzG">
+                                <rect key="frame" x="0.0" y="33" width="359" height="102"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="110"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ach-jD-Vjv">
-                                <rect key="frame" x="295" y="234" width="80" height="80"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
-                                <state key="normal" title="÷"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -276,6 +312,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="7NU-pR-xzG" id="84k-jS-BBT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3Zw-es-Ru9">
