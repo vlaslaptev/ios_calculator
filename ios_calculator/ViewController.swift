@@ -30,10 +30,12 @@ class ViewController: UIViewController {
             } else {
                 resultLabel.text = String (currentText.dropLast())
             }
+            isSelectOperator = false
             return
         }
         
         if ((number == "0" || number == "000") && isStartTyping) {
+            isSelectOperator = false
             return
         }
         
@@ -44,6 +46,7 @@ class ViewController: UIViewController {
             } else {
                 resultLabel.text = resultLabel.text! + number
             }
+            isSelectOperator = false
         }
     }
     
@@ -64,19 +67,37 @@ class ViewController: UIViewController {
         }
     }
 
+    var isSelectOperator = false
     var isPressOperator = false
     var operatorType = ""
+    var operatorButton : UIButton? = nil;
     @IBAction func pressOperator(_ sender: UIButton) {
-        if (isPressOperator) {
-            let result: Double = applyOperator(operatorType: operatorType, firstOperand: firstOperand, secondOperand: currentInput)
-            currentInput = result
-            firstOperand = result
-            operatorType = sender.currentTitle!
+        if (!isSelectOperator || operatorType != sender.currentTitle) {
+            if (isPressOperator && !isSelectOperator) {
+                let result: Double = applyOperator(operatorType: operatorType, firstOperand: firstOperand, secondOperand: currentInput)
+                currentInput = result
+                firstOperand = result
+                operatorType = sender.currentTitle!
+                isSelectOperator = false
+                changeOrClearBackgroungOperatorButton(button: sender)
+            } else {
+                isSelectOperator = true
+                firstOperand = currentInput
+                isStartTyping = true
+                isPressOperator = true
+                operatorType = sender.currentTitle!
+                changeOrClearBackgroungOperatorButton(button: sender)
+            }
+        }
+    }
+
+    func changeOrClearBackgroungOperatorButton(button: UIButton) {
+        if (["+", "-", "✕", "÷"].contains(button.currentTitle!)) {
+            operatorButton?.backgroundColor = UIColor.white
+            operatorButton = button
+            button.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 0.05)
         } else {
-            firstOperand = currentInput
-            isStartTyping = true
-            isPressOperator = true
-            operatorType = sender.currentTitle!
+            operatorButton?.backgroundColor = UIColor.white
         }
     }
     
@@ -110,6 +131,8 @@ class ViewController: UIViewController {
             isPressOperator = false
             firstOperand = 0
             isStartTyping = true
+            isSelectOperator = false
+            changeOrClearBackgroungOperatorButton(button: sender)
         }
     }
     
@@ -118,6 +141,7 @@ class ViewController: UIViewController {
         firstOperand = 0
         currentInput = Double(0)
         isPressOperator = false
+        isSelectOperator = false
     }
     
     override func didReceiveMemoryWarning() {
