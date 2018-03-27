@@ -219,6 +219,9 @@
                                 <rect key="frame" x="295" y="587" width="80" height="80"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="="/>
+                                <connections>
+                                    <action selector="pressEqual:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2am-Nb-cwJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="7NU-pR-xzG">
                                 <rect key="frame" x="0.0" y="33" width="359" height="102"/>

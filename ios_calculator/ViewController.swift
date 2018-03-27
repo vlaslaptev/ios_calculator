@@ -54,7 +54,12 @@ class ViewController: UIViewController {
         }
         
         set{
-            resultLabel.text = "\(newValue)"
+            if (floor(newValue) == newValue) {
+               resultLabel.text = "\(Int(newValue))"
+            } else {
+               resultLabel.text = "\(newValue)"
+            }
+            
             isStartTyping = true
         }
     }
@@ -63,7 +68,7 @@ class ViewController: UIViewController {
     var operatorType = ""
     @IBAction func pressOperator(_ sender: UIButton) {
         if (isPressOperator) {
-            var result: Double = applyOperator(operatorType: operatorType, firstOperand: firstOperand, secondOperand: currentInput)
+            let result: Double = applyOperator(operatorType: operatorType, firstOperand: firstOperand, secondOperand: currentInput)
             currentInput = result
             firstOperand = result
             operatorType = sender.currentTitle!
@@ -98,6 +103,15 @@ class ViewController: UIViewController {
         return result;
     }
     
+    @IBAction func pressEqual(_ sender: UIButton) {
+        if (isPressOperator) {
+            let result: Double = applyOperator(operatorType: operatorType, firstOperand: firstOperand, secondOperand: currentInput)
+            currentInput = result
+            isPressOperator = false
+            firstOperand = 0
+            isStartTyping = true
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {
