@@ -113,6 +113,12 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func pressClearAll(_ sender: UIButton) {
+        isStartTyping = true
+        firstOperand = 0
+        currentInput = Double(0)
+        isPressOperator = false
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

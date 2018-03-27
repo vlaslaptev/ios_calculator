@@ -32,6 +32,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="CA"/>
+                                <connections>
+                                    <action selector="pressClearAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ysF-ZX-cps"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwl-r0-msK">
                                 <rect key="frame" x="97" y="146" width="80" height="80"/>
