@@ -43,6 +43,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="%"/>
+                                <connections>
+                                    <action selector="pressUnaryOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8yk-TA-4PH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4I-vj-QsA">
                                 <rect key="frame" x="200" y="146" width="80" height="80"/>
@@ -51,6 +54,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="+\-"/>
+                                <connections>
+                                    <action selector="pressUnaryOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gUk-v6-kTj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iog-8s-BPj">
                                 <rect key="frame" x="295" y="146" width="80" height="80"/>
@@ -67,16 +73,25 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="√"/>
+                                <connections>
+                                    <action selector="pressUnaryOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PDS-e6-CmQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TiC-ne-Cl3">
                                 <rect key="frame" x="200" y="234" width="80" height="80"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="X³"/>
+                                <connections>
+                                    <action selector="pressUnaryOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DlO-67-Nau"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugm-oX-NfZ">
                                 <rect key="frame" x="97" y="234" width="80" height="80"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="X²"/>
+                                <connections>
+                                    <action selector="pressUnaryOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RvK-dd-9l1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ach-jD-Vjv">
                                 <rect key="frame" x="295" y="234" width="80" height="80"/>

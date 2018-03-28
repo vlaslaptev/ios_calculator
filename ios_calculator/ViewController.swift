@@ -90,6 +90,8 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    
 
     func changeOrClearBackgroungOperatorButton(button: UIButton) {
         if (["+", "-", "✕", "÷"].contains(button.currentTitle!)) {
@@ -119,7 +121,7 @@ class ViewController: UIViewController {
             result = firstOperand / secondOperand
             break
         default:
-            break;
+            break
         }
         return result;
     }
@@ -128,11 +130,7 @@ class ViewController: UIViewController {
         if (isPressOperator) {
             let result: Double = applyOperator(operatorType: operatorType, firstOperand: firstOperand, secondOperand: currentInput)
             currentInput = result
-            isPressOperator = false
-            firstOperand = 0
-            isStartTyping = true
-            isSelectOperator = false
-            changeOrClearBackgroungOperatorButton(button: sender)
+            clearAllVarAfterPrintResult(sender: sender)
         }
     }
     
@@ -143,6 +141,44 @@ class ViewController: UIViewController {
         isPressOperator = false
         isSelectOperator = false
     }
+    
+    @IBAction func pressUnaryOperator(_ sender: UIButton) {
+        currentInput = applyUnaryOperator(unaryOperatorType: sender.currentTitle!)
+        clearAllVarAfterPrintResult(sender: sender)
+    }
+    
+    func clearAllVarAfterPrintResult(sender: UIButton) {
+        isPressOperator = false
+        firstOperand = 0
+        isStartTyping = true
+        isSelectOperator = false
+        changeOrClearBackgroungOperatorButton(button: sender)
+    }
+    
+    func applyUnaryOperator(unaryOperatorType: String) -> Double {
+        var result = currentInput
+        switch unaryOperatorType {
+        case "X²":
+            result = result * result
+            break
+        case "X³":
+            result = result * result * result
+            break
+        case "√":
+            result = result.squareRoot()
+            break
+        case "%":
+            result = result / 100
+            break
+        case "+\\-":
+            result = result - result - result
+            break
+        default:
+            break
+        }
+        return result
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
