@@ -24,8 +24,12 @@ class ViewController: UIViewController {
         let currentText = resultLabel.text ?? ""
         
         if (number == "<––") {
-            if (currentText == "" || currentText.count == 1) {
+            if (isStartTyping) {
                 resultLabel.text = "0"
+                return
+            }
+            if (currentText == "" || currentText.count == 1) {
+                
                 isStartTyping = true
             } else {
                 resultLabel.text = String (currentText.dropLast())
@@ -58,7 +62,7 @@ class ViewController: UIViewController {
         
         set{
             if (floor(newValue) == newValue) {
-               resultLabel.text = "\(Int(newValue))"
+               resultLabel.text = "\(Int64(newValue))"
             } else {
                resultLabel.text = "\(newValue)"
             }
@@ -90,8 +94,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    
 
     func changeOrClearBackgroungOperatorButton(button: UIButton) {
         if (["+", "-", "✕", "÷"].contains(button.currentTitle!)) {
@@ -135,11 +137,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func pressClearAll(_ sender: UIButton) {
-        isStartTyping = true
-        firstOperand = 0
         currentInput = Double(0)
-        isPressOperator = false
-        isSelectOperator = false
+        clearAllVarAfterPrintResult(sender: sender)
     }
     
     @IBAction func pressUnaryOperator(_ sender: UIButton) {
@@ -179,12 +178,15 @@ class ViewController: UIViewController {
         return result
     }
     
+    @IBAction func pressComma(_ sender: UIButton) {
+        if (!isStartTyping && resultLabel.text!.range(of:".") == nil) {
+            resultLabel.text = resultLabel.text! + "."
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

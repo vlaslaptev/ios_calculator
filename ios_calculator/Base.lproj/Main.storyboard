@@ -230,8 +230,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4G-UT-A6m">
                                 <rect key="frame" x="200" y="587" width="80" height="80"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="35"/>
-                                <state key="normal" title=","/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="41"/>
+                                <state key="normal" title="."/>
+                                <connections>
+                                    <action selector="pressComma:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ePN-42-a8b"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O61-Yp-U0I">
                                 <rect key="frame" x="295" y="587" width="80" height="80"/>
