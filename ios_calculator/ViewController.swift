@@ -29,16 +29,20 @@ class ViewController: UIViewController {
                 return
             }
             if (currentText == "" || currentText.count == 1) {
-                
+                resultLabel.text = "0"
                 isStartTyping = true
             } else {
                 resultLabel.text = String (currentText.dropLast())
+                if (resultLabel.text! == "0") {
+                    isStartTyping = true
+                }
             }
             isSelectOperator = false
             return
         }
         
-        if ((number == "0" || number == "000") && isStartTyping) {
+        if (((number == "0" || number == "000") && isStartTyping && !isPressOperator ) ||
+            ((number == "0" || number == "000") && resultLabel.text! == "0") ) {
             isSelectOperator = false
             return
         }
@@ -170,7 +174,7 @@ class ViewController: UIViewController {
             result = result / 100
             break
         case "+\\-":
-            result = result - result - result
+            result = -result
             break
         default:
             break
@@ -179,8 +183,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func pressComma(_ sender: UIButton) {
-        if (!isStartTyping && resultLabel.text!.range(of:".") == nil) {
+        if (resultLabel.text!.range(of:".") == nil) {
             resultLabel.text = resultLabel.text! + "."
+            isStartTyping = false
         }
     }
     
