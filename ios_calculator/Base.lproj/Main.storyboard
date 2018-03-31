@@ -63,7 +63,7 @@
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="&lt;––"/>
                                 <connections>
-                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VeJ-9k-fue"/>
+                                    <action selector="pressBackspace:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hni-Rc-UH5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqn-Lk-LPd">
@@ -217,7 +217,7 @@
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="000"/>
                                 <connections>
-                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kqk-Kg-SdS"/>
+                                    <action selector="pressZero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pyU-Kh-Xkh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZc-ES-tT5">
@@ -225,7 +225,7 @@
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
                                 <state key="normal" title="0"/>
                                 <connections>
-                                    <action selector="pressNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sKh-l4-ZKK"/>
+                                    <action selector="pressZero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZoC-ba-Ra7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4G-UT-A6m">

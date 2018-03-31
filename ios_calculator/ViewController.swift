@@ -18,67 +18,92 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
     
     var isStartTyping = true
+    var firstOperand: Double = 0
+    var isSelectOperator = false
+    var isPressOperator = false
+    var operatorType = ""
+    var operatorButton : UIButton? = nil;
+    var currentInput: Double {
+        get {
+            return Double(resultLabel.text!)!
+        }
+        set{
+            if (floor(newValue) == newValue) {
+                resultLabel.text = "\(Int64(newValue))"
+            } else {
+                resultLabel.text = "\(newValue)"
+            }
+            isStartTyping = true
+        }
+    }
+
+    @IBAction func pressClearAll(_ sender: UIButton) {
+        currentInput = Double(0)
+        clearAllVarAfterPrintResult(sender: sender)
+    }
+
+    @IBAction func pressBackspace(_ sender: UIButton) {
+        let currentText = resultLabel.text ?? ""
+        if (isStartTyping) {
+            resultLabel.text = "0"
+            return
+        }
+        if (currentText == "" || currentText.count == 1) {
+            resultLabel.text = "0"
+            isStartTyping = true
+        } else {
+            resultLabel.text = String (currentText.dropLast())
+            if (resultLabel.text! == "0") {
+                isStartTyping = true
+            }
+        }
+        isSelectOperator = false
+    }
     
+    @IBAction func pressZero(_ sender: UIButton) {
+        if (isStartTyping) {
+            if (isPressOperator) {
+                pressNumber(sender)
+            }
+        } else {
+            pressNumber(sender)
+        }
+    }
+    
+    @IBAction func pressComma(_ sender: UIButton) {
+        if (resultLabel.text!.range(of:".") == nil) {
+            resultLabel.text = resultLabel.text! + "."
+            isStartTyping = false
+        }
+    }
+
     @IBAction func pressNumber(_ sender: UIButton) {
         let number = sender.currentTitle!
         let currentText = resultLabel.text ?? ""
-        
-        if (number == "<––") {
-            if (isStartTyping) {
-                resultLabel.text = "0"
-                return
-            }
-            if (currentText == "" || currentText.count == 1) {
-                resultLabel.text = "0"
-                isStartTyping = true
-            } else {
-                resultLabel.text = String (currentText.dropLast())
-                if (resultLabel.text! == "0") {
-                    isStartTyping = true
-                }
-            }
-            isSelectOperator = false
-            return
-        }
-        
-        if (((number == "0" || number == "000") && isStartTyping && !isPressOperator ) ||
-            ((number == "0" || number == "000") && resultLabel.text! == "0") ) {
-            isSelectOperator = false
-            return
-        }
-        
         if (currentText.count < 25) {
-            if (isStartTyping) {
+            if (isStartTyping || currentText == "0") {
                 resultLabel.text = number
                 isStartTyping = false
             } else {
                 resultLabel.text = resultLabel.text! + number
             }
-            isSelectOperator = false
         }
+        isSelectOperator = false
     }
-    
-    var firstOperand: Double = 0
-    var currentInput: Double {
-        get {
-            return Double(resultLabel.text!)!
-        }
-        
-        set{
-            if (floor(newValue) == newValue) {
-               resultLabel.text = "\(Int64(newValue))"
-            } else {
-               resultLabel.text = "\(newValue)"
-            }
-            
-            isStartTyping = true
+
+    @IBAction func pressEqual(_ sender: UIButton) {
+        if (isPressOperator) {
+            let result: Double = applyOperator(operatorType: operatorType, firstOperand: firstOperand, secondOperand: currentInput)
+            currentInput = result
+            clearAllVarAfterPrintResult(sender: sender)
         }
     }
 
-    var isSelectOperator = false
-    var isPressOperator = false
-    var operatorType = ""
-    var operatorButton : UIButton? = nil;
+    @IBAction func pressUnaryOperator(_ sender: UIButton) {
+        currentInput = applyUnaryOperator(unaryOperatorType: sender.currentTitle!)
+        clearAllVarAfterPrintResult(sender: sender)
+    }
+
     @IBAction func pressOperator(_ sender: UIButton) {
         if (!isSelectOperator || operatorType != sender.currentTitle) {
             if (isPressOperator && !isSelectOperator) {
@@ -108,7 +133,7 @@ class ViewController: UIViewController {
             operatorButton?.backgroundColor = UIColor.white
         }
     }
-    
+
     func applyOperator(operatorType: String,
                        firstOperand: Double,
                        secondOperand: Double) -> Double {
@@ -131,25 +156,7 @@ class ViewController: UIViewController {
         }
         return result;
     }
-    
-    @IBAction func pressEqual(_ sender: UIButton) {
-        if (isPressOperator) {
-            let result: Double = applyOperator(operatorType: operatorType, firstOperand: firstOperand, secondOperand: currentInput)
-            currentInput = result
-            clearAllVarAfterPrintResult(sender: sender)
-        }
-    }
-    
-    @IBAction func pressClearAll(_ sender: UIButton) {
-        currentInput = Double(0)
-        clearAllVarAfterPrintResult(sender: sender)
-    }
-    
-    @IBAction func pressUnaryOperator(_ sender: UIButton) {
-        currentInput = applyUnaryOperator(unaryOperatorType: sender.currentTitle!)
-        clearAllVarAfterPrintResult(sender: sender)
-    }
-    
+
     func clearAllVarAfterPrintResult(sender: UIButton) {
         isPressOperator = false
         firstOperand = 0
@@ -157,7 +164,7 @@ class ViewController: UIViewController {
         isSelectOperator = false
         changeOrClearBackgroungOperatorButton(button: sender)
     }
-    
+
     func applyUnaryOperator(unaryOperatorType: String) -> Double {
         var result = currentInput
         switch unaryOperatorType {
@@ -180,13 +187,6 @@ class ViewController: UIViewController {
             break
         }
         return result
-    }
-    
-    @IBAction func pressComma(_ sender: UIButton) {
-        if (resultLabel.text!.range(of:".") == nil) {
-            resultLabel.text = resultLabel.text! + "."
-            isStartTyping = false
-        }
     }
     
     override func didReceiveMemoryWarning() {
